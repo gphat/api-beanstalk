@@ -9,7 +9,7 @@ my $api = API::Beanstalk->new(
     password => $ENV{'TEST_BEANSTALK_PASS'}
 );
 
-my $data = $api->account;
+my $data = $api->get_account;
 cmp_ok('testinbeanstalk2g', 'eq', $data->{'third-level-domain'}, 'content');
 
 done_testing;

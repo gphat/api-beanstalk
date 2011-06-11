@@ -85,13 +85,13 @@ has 'username' => (
     required => 1
 );
 
-=method account
+=method get_account
 
 Get Account information.
 
 =cut
 
-sub account {
+sub get_account {
     my ($self) = @_;
 
     my $resp = $self->_client->get($self->url."api/account.xml");
