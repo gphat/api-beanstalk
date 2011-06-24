@@ -12,6 +12,15 @@ use XML::Simple qw(XMLin);
 
     use API::Beanstalk;
 
+    my $api = API::Beanstalk->new(
+        account_name => $accountname',
+        username => $username,
+        password => $password
+    );
+
+    my $href = $api->get_account;
+
+
 =head1 DESCRIPTION
 
 Beanstalk XXX
@@ -87,7 +96,27 @@ has 'username' => (
 
 =method get_account
 
-Get Account information.
+Get Account information.  Returns a hashref with the following keys
+
+=over 4
+
+=item third-level-domain
+
+=item name
+
+=item plan-id
+
+=item time-zone
+
+=item owner-id
+
+=item suspended
+
+=item id
+
+=item updated-at
+
+=back
 
 =cut
 
